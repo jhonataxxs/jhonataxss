@@ -1,13 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="style.css"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhonatanxs</title>
+    <title>Realidade Palmeirense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .tilt {
+            transform: rotate(-5deg);
+        }
+    </style>
 </head>
-<body>
-    <p>vai corinthians</p>
-    <h1>palmeira nao tem mundial</h1>
+<body class="flex flex-col items-center justify-center p-4">
+    <div class="max-w-4xl w-full text-center">
+        <!-- Cabeçalho -->
+        <header class="mb-12">
+            <h1 class="text-5xl md:text-7xl font-bold mb-2 font-['Bebas_Neue'] text-red-500">VERDADE INCONVENIENTE</h1>
+            <div class="h-2 bg-red-500 w-1/2 mx-auto"></div>
+        </header>
+        
+        <!-- Conteúdo Principal -->
+        <main>
+            <!-- Símbolo do mundial com efeitos -->
+            <div class="relative mb-16">
+                <div class="pulse floating inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-64 h-64 md:w-80 md:h-80 fill-red-500">
+                        <path d="M100,10 a90,90 0 0 1 0,180 a90,90 0 0 1 0,-180" opacity="0.2"/>
+                        <path d="M100,30 a70,70 0 0 1 0,140 a70,70 0 0 1 0,-140" opacity="0.3"/>
+                        <path d="M100,50 a50,50 0 0 1 0,100 a50,50 0 0 1 0,-100" opacity="0.4"/>
+                        <path d="M100,70 a30,30 0 0 1 0,60 a30,30 0 0 1 0,-60" opacity="0.6"/>
+                        <text x="100" y="100" text-anchor="middle" font-size="24" fill="white" dy=".3em">?</text>
+                    </svg>
+                </div>
+                
+                <div class="floating absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16 fill-yellow-400 animate-spin">
+                        <path d="M12,2.5c-5.2,0-9.5,4.3-9.5,9.5s4.3,9.5,9.5,9.5s9.5-4.3,9.5-9.5S17.2,2.5,12,2.5z M12,20.5c-4.7,0-8.5-3.8-8.5-8.5 S7.3,3.5,12,3.5s8.5,3.8,8.5,8.5S16.7,20.5,12,20.5z"/>
+                        <path d="M12,4.5c4.1,0,7.5,3.4,7.5,7.5s-3.4,7.5-7.5,7.5S4.5,16.1,4.5,12S7.9,4.5,12,4.5z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Mensagem principal -->
+            <div class="mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 font-['Bebas_Neue'] text-red-500 tilt">PALMEIRAS NÃO TEM MUNDIAL</h2>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                    Um fato científico comprovado por torcedores de todos os times, menos pelo palmeirense.
+                </p>
+                
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-red-500 tilt transform rotate-1 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">A VERDADE HISTÓRICA:</h3>
+                    <p class="mb-4">
+                        Em 1951, o mundo ainda se recuperava da 2ª Guerra Mundial. A "Copa Rio" foi um torneio amistoso organizado pela CBD (não pela FIFA) com critérios questionáveis de participação.
+                    </p>
+                    <p>
+                        Mesmo após o reconhecimento da FIFA em 2014 (por pressão palmeirense), o título não tem o mesmo status dos mundiais atuais.
+                    </p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Seção interativa -->
+        <section class="mt-8 mb-12">
+            <button id="revealBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105 mb-4">
+                REVELAR PROVA DEFINITIVA
+            </button>
+            
+            <div id="proofSection" class="hidden bg-black p-6 rounded-lg border border-red-500 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-400">PROVA IRREFUTÁVEL:</h3>
+                <p class="mb-4">A taça da Copa Rio de 1951:</p>
+                <ul class="list-disc list-inside mb-4 text-left">
+                    <li>Pesa apenas 1,8kg (a do Mundial de 2000 pesa 7,5kg)</li>
+                    <li>Não tem o logotipo da FIFA</li>
+                    <li>É do tamanho de uma taça estadual</li>
+                </ul>
+                <p>Quando um palmeirense disser que tem mundial, mostre isso e peça para ele segurar uma taça de verdade.</p>
+            </div>
+        </section>
+        
+        <!-- Rodapé -->
+        <footer class="text-gray-400 text-sm mt-8">
+            <p class="mb-2">Este site é uma brincadeira entre torcedores. Não leve a sério (ou leve, se quiser).</p>
+            <p>Atualizado em: 2023 - O ano em que o Palmeiras continuou sem mundial.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('revealBtn').addEventListener('click', function() {
+            const proofSection = document.getElementById('proofSection');
+            proofSection.classList.toggle('hidden');
+            
+            if (!proofSection.classList.contains('hidden')) {
+                this.textContent = 'OCULTAR PROVA';
+                proofSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                this.textContent = 'REVELAR PROVA DEFINITIVA';
+            }
+        });
+    </script>
 </body>
 </html>
